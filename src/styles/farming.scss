@@ -1,0 +1,125 @@
+@import "../styles/variables.scss";
+.shareFarming {
+    width: 100%;
+    background: url('/assets/img/background.png') center /cover no-repeat;
+    background-size: 100% 100%;
+    background-position: 100% 100%;
+    @include iphone {
+        background: url('/assets/img/tree.png'), url('/assets/img/background1.png');
+        background-repeat: no-repeat, no-repeat;
+        background-position: 50% 10%, 100% 100%;
+        background-size: 80% 24%, 100% 100%;
+    }
+    @include encodesans;
+    .farmingCon {
+        padding-top: 182px;
+        padding-bottom: 277px;
+        @include iphone {
+            padding-bottom: 30px;
+        }
+        .container {
+            @include iphone {
+                width: 100%;
+                background: transparent;
+                margin-top: 8rem;
+                box-shadow: none;
+                padding-bottom: 0px;
+            }
+            width: 1052px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            box-shadow: 0px 2.88px 4.8px rgba(166,
+            166,
+            185,
+            0.5);
+            border-radius: 12px;
+            padding-bottom: 133px;
+            .heading {
+                @include iphone {
+                    width: 90%;
+                    margin: auto;
+                    font-weight: 500;
+                    font-size: 32px;
+                    line-height: 48px;
+                    text-align: left;
+                    color: white;
+                }
+                @include encodesans;
+                text-align: center;
+                font-size: 40px;
+                line-height: 48px;
+                color: #212529;
+                padding-top: 66px;
+            }
+            .desc {
+                @include iphone {
+                    width: 90%;
+                    margin: 15px auto;
+                    color: white;
+                }
+                @include encodesans;
+                font-size: 16px;
+                line-height: 20px;
+                color: #212529;
+                margin-top: 3rem;
+                margin: 30px 123px 0 66px;
+            }
+            .why_join {
+                @include iphone {
+                    width: 100%;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                }
+                display: grid;
+                grid-template-columns: 40% 60%;
+                margin: 110px 0px 0px 108px;
+                align-items: center;
+                img {
+                    @include iphone {
+                        display: none;
+                    }
+                }
+                .content {
+                    @include iphone {
+                        width: 90%;
+                        margin: auto;
+                        .detail {
+                            p {
+                                width: 100%;
+                                margin: auto;
+                            }
+                        }
+                    }
+                    .detail {
+                        .headings {
+                            font-size: 30px;
+                            line-height: 38px;
+                            color: #212529;
+                            margin-bottom: 19px;
+                            @include iphone {
+                                color: white;
+                                font-weight: 500;
+                                font-size: 24px;
+                                line-height: 38px;
+                            }
+                        }
+                        p {
+                            font-size: 18px;
+                            line-height: 28px;
+                            color: #212529;
+                            margin-top: 13px;
+                            width: 70%;
+                            @include iphone {
+                                width: 100%;
+                                color: white;
+                                font-weight: normal;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1681 @@
+@import "../styles/variables.scss";
+.calculator {
+    @include iphone {
+        width: 90%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .container {
+        @include iphone {
+            width: 100%;
+            padding: 0px !important;
+            margin: 15px auto;
+        }
+        margin: 0 auto;
+        width: 43%;
+        height: 100%;
+        padding: 5rem 0rem;
+        .module {
+            font-family: Encode Sans;
+            font-style: normal;
+            font-weight: normal;
+            .heading {
+                font-size: 64px;
+                line-height: 80px;
+                color: #212529;
+                font-weight: bold;
+                margin-bottom: 24px;
+                @include iphone {
+                    font-size: 34px;
+                    line-height: 42px;
+                }
+            }
+            .desc {
+                .tit {
+                    font-weight: 600;
+                    font-size: 34px;
+                    line-height: 42px;
+                    color: #212529;
+                    @include iphone {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #212529;
+                    margin: 18px 0px 0px 0px;
+                    a {
+                        text-decoration: none;
+                        font-size: 16px;
+                        line-height: 20px;
+                        color: #3AAC59;
+                    }
+                }
+            }
+            .calc {
+                margin: 38px 0px 0px 0px;
+                .calc__tit {
+                    font-family: Encode Sans;
+                    font-style: normal;
+                    font-weight: 600;
+                    color: #212529;
+                    display: flex;
+                    .head {
+                        font-size: 34px;
+                        line-height: 42px;
+                        @include iphone {
+                            font-size: 23px;
+                            line-height: 30px;
+                        }
+                    }
+                    span {
+                        font-size: 14px;
+                        color: #212529;
+                        @include iphone {
+                            padding-left: 5px;
+                        }
+                    }
+                }
+                .scroll_mod {
+                    margin: 30px 0px;
+                    position: relative;
+                    @include iphone {
+                        margin: 15px 0px;
+                    }
+                    input[type=range]::-webkit-slider-thumb {
+                        width: 10px;
+                        height: 10px;
+                        background: white;
+                        border: 1px solid #CCC;
+                        border-radius: 50%;
+                        -webkit-appearance: none;
+                        appearance: none;
+                        cursor: pointer;
+                        box-shadow: -1000px 0 0 995px #38A169;
+                        margin-top: -2px;
+                        @include iphone {
+                            margin-top: -3px;
+                        }
+                    }
+                    input[type=range] {
+                        overflow: hidden;
+                        width: 100%;
+                        height: 100%;
+                        -webkit-appearance: none;
+                        background: #DDDDDD;
+                        border-radius: 5px;
+                        outline: none;
+                    }
+                    input[type=range]::-webkit-slider-runnable-track {
+                        height: 7px;
+                        -webkit-appearance: none;
+                        color: #13bba4;
+                        margin: 1px;
+                        @include iphone {
+                            height: 4px;
+                        }
+                    }
+                    // input[type=range]::-ms-fill-lower {
+                    //     background: #777;
+                    //     border-radius: 10px;
+                    // }
+                    // input[type=range]::-ms-fill-upper {
+                    //     background: #ddd;
+                    //     border-radius: 10px;
+                    // }
+                    .control {
+                        width: 100%;
+                    }
+                }
+                form {
+                    display: flex;
+                    width: 100%;
+                    margin: 0 auto;
+                    .input {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        input {
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            padding: 10px;
+                            width: 6rem;
+                            height: 1.8rem;
+                            background: #F7FAFC;
+                            border-radius: 6px;
+                            outline: none;
+                            @include iphone {
+                                border: none;
+                                height: 1.5rem;
+                            }
+                        }
+                        label {
+                            font-size: 16px;
+                            line-height: 20px;
+                            color: #212529;
+                        }
+                    }
+                    .parameter {
+                        display: flex;
+                        gap: 5px;
+                        align-items: center;
+                        margin-left: 1.5rem;
+                        border: 1px solid #ccc;
+                        width: 25rem;
+                        cursor: pointer;
+                        position: relative;
+                        background: #F7FAFC;
+                        border-radius: 6px;
+                        width: 18rem;
+                        @include iphone {
+                            width: 20rem;
+                            border: none;
+                        }
+                        .num_para {
+                            border: none;
+                            background: #F7FAFC;
+                            font-size: 16px;
+                            line-height: 20px;
+                            color: #212529;
+                            padding-left: 15px;
+                            width: 10rem;
+                            outline: none;
+                        }
+                        .value {
+                            display: flex;
+                            align-items: center;
+                            width: 7rem;
+                            height: 100%;
+                            .current {
+                                font-size: 1.5rem;
+                                padding: 0px 10px;
+                            }
+                            .list {
+                                display: none;
+                                border: 1px solid #ccc;
+                                background: white;
+                                width: 8rem;
+                                position: absolute;
+                                inset: auto 10rem -15rem;
+                                font-size: 1.4rem;
+                                border-radius: 4px;
+                                @include iphone {
+                                    width: 9.5rem;
+                                }
+                                .list__para {
+                                    padding: 5px 0;
+                                    display: flex;
+                                    justify-content: center;
+                                }
+                                .list__para:hover {
+                                    background: #007BFF;
+                                    color: white;
+                                }
+                            }
+                            .active {
+                                display: block;
+                            }
+                        }
+                        // .value:hover {
+                        //     background: #FFE500;
+                        // }
+                    }
+                }
+            }
+            .result {
+                font-family: Encode Sans;
+                font-style: normal;
+                font-weight: 600;
+                margin: 3rem 0;
+                h2 {
+                    font-size: 34px;
+                    line-height: 42px;
+                    color: #212529;
+                    @include iphone {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+                }
+                .result__mode {
+                    display: flex;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #276749;
+                    gap: 3rem;
+                    margin: 1.6rem 0 3rem 0;
+                    align-items: center;
+                    .simplified,
+                    .advanced {
+                        cursor: pointer;
+                    }
+                    .active {
+                        background: #C6F6D5;
+                        border-radius: 9999px;
+                        padding: 10px 15px;
+                        @include iphone {
+                            padding: 5px 10px;
+                        }
+                    }
+                }
+                .advanced__result {
+                    font-family: Encode Sans;
+                    font-style: normal;
+                    font-weight: normal;
+                    border: 1px solid #ccc;
+                    padding: 10px 15px;
+                    display: none;
+                    @include iphone {
+                        border: none;
+                        padding: 0px;
+                    }
+                    h2 {
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+                    .time {
+                        display: flex;
+                        gap: 3rem;
+                        margin: 16px 0px 24px 0px;
+                        @include iphone {
+                            margin: 16px 0px 0px 0px;
+                            gap: 1rem;
+                        }
+                        .time_earning:first-child {
+                            @include iphone {
+                                width: 40%;
+                                .detail_earning {
+                                    width: 75%;
+                                    .list {
+                                        width: 12.5rem;
+                                    }
+                                }
+                            }
+                        }
+                        .time_earning:nth-child(2) {
+                            @include iphone {
+                                width: 60%;
+                                .detail_earning {
+                                    width: 80%;
+                                    .list__time {
+                                        width: 18.5rem;
+                                    }
+                                }
+                            }
+                        }
+                        .time_earning {
+                            position: relative;
+                            @include iphone {
+                                width: 40%;
+                            }
+                            h3 {
+                                font-size: 16px;
+                                line-height: 20px;
+                                font-weight: normal;
+                            }
+                            .detail_earning {
+                                background: #F7FAFC;
+                                border-radius: 6px;
+                                width: 12rem;
+                                display: flex;
+                                align-items: center;
+                                margin: 10px 0px 24px 0px;
+                                justify-content: space-between;
+                                padding: 10px 15px;
+                                cursor: pointer;
+                                @include iphone {
+                                    width: 9rem;
+                                }
+                                .list {
+                                    display: none;
+                                    position: absolute;
+                                    margin-top: 25rem;
+                                    margin-left: -1.5rem;
+                                    width: 14.5rem;
+                                    border: 1px solid #ccc;
+                                    padding: 1rem 0;
+                                    z-index: 10;
+                                    background: white;
+                                    border-radius: 5px;
+                                    .list__para {
+                                        font-size: 16px;
+                                        line-height: 20px;
+                                        color: #212529;
+                                        padding: 5px 15px;
+                                    }
+                                    .list__para:hover {
+                                        background: #007BFF;
+                                        color: white;
+                                    }
+                                }
+                                .active {
+                                    display: block;
+                                }
+                                .list__time {
+                                    display: none;
+                                    position: absolute;
+                                    margin-top: 13rem;
+                                    margin-left: -1.5rem;
+                                    width: 24rem;
+                                    border: 1px solid #ccc;
+                                    padding: 1rem 0;
+                                    z-index: 10;
+                                    background: white;
+                                    border-radius: 5px;
+                                    @include iphone {
+                                        margin-top: 15rem;
+                                        width: 15rem;
+                                    }
+                                    .list__para {
+                                        font-size: 16px;
+                                        line-height: 20px;
+                                        color: #212529;
+                                        padding: 5px 15px;
+                                    }
+                                    .list__para:hover {
+                                        background: #007BFF;
+                                        color: white;
+                                    }
+                                }
+                                .active_day {
+                                    display: block;
+                                }
+                            }
+                            .start_date {
+                                width: 21rem;
+                                @include iphone {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    .chart__Detail {
+                        margin-bottom: 3rem;
+                        .note__chart {
+                            display: flex;
+                            align-items: center;
+                            gap: 3rem;
+                            justify-content: center;
+                            @include iphone {
+                                display: grid;
+                                grid-template-columns: 50% 50%;
+                                gap: 1rem 0rem;
+                                width: 80%;
+                                margin: auto;
+                            }
+                            .note--item {
+                                width: 100%;
+                                span {
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                }
+                            }
+                            .note--item:first-child {
+                                span {
+                                    color: #38A169;
+                                }
+                            }
+                            .note--item:nth-child(2) {
+                                span {
+                                    color: #E59762;
+                                }
+                            }
+                            .note--item:nth-child(3) {
+                                span {
+                                    color: #DE4CE1;
+                                }
+                            }
+                            .note--item:nth-child(4) {
+                                span {
+                                    color: #D53F8C;
+                                }
+                            }
+                            .note--item:last-child {
+                                @include iphone {
+                                    margin-left: 7rem;
+                                }
+                                width: 100%;
+                                span {
+                                    color: #03B6D8;
+                                }
+                            }
+                        }
+                    }
+                    h3 {
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+                    p {
+                        font-size: 14px;
+                        line-height: 17px;
+                        margin: 12px 0px 16px 0px;
+                        @include iphone {
+                            width: 100% !important;
+                            letter-spacing: -0.015em;
+                            color: #6C757D;
+                            margin: 0px 0px 30px 0px;
+                        }
+                    }
+                    .plot {
+                        display: grid;
+                        grid-template-columns: 33% 33% 33%;
+                        justify-content: space-between;
+                        margin: 16px 0px 26px 0px;
+                        @include iphone {
+                            display: flex;
+                            flex-direction: column;
+                            margin: 16px 0px 30px 0px;
+                        }
+                        .plot__detail {
+                            h3 {
+                                font-size: 16px;
+                                line-height: 20px;
+                            }
+                            .plot__item {
+                                background: #F7FAFC;
+                                border-radius: 6px;
+                                width: 17rem;
+                                margin: 12px 0px 26px 0px;
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 10px 15px;
+                                position: relative;
+                                .plot__number {
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                }
+                                .plot__para {
+                                    display: flex;
+                                    gap: 1rem;
+                                    align-items: center;
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                    cursor: pointer;
+                                    .space--plot {
+                                        display: none;
+                                        border: 1px solid #ccc;
+                                        background: white;
+                                        width: 8rem;
+                                        position: absolute;
+                                        inset: auto 12rem -18.5rem;
+                                        font-size: 1.4rem;
+                                        border-radius: 4px;
+                                        z-index: 10;
+                                        .list__para {
+                                            padding: 5px 0;
+                                            display: flex;
+                                            justify-content: center;
+                                        }
+                                        .list__para:hover {
+                                            background: #007BFF;
+                                            color: white;
+                                        }
+                                    }
+                                    .active--plot {
+                                        display: block;
+                                    }
+                                    .speed--plot {
+                                        display: none;
+                                        border: 1px solid #ccc;
+                                        background: white;
+                                        width: 8rem;
+                                        position: absolute;
+                                        inset: auto 11.5rem -18.5rem;
+                                        font-size: 1.4rem;
+                                        border-radius: 4px;
+                                        z-index: 10;
+                                        .list__para {
+                                            padding: 5px 0;
+                                            display: flex;
+                                            justify-content: center;
+                                        }
+                                        .list__para:hover {
+                                            background: #007BFF;
+                                            color: white;
+                                        }
+                                    }
+                                    .active--speed {
+                                        display: block;
+                                    }
+                                    .max--plot {
+                                        display: none;
+                                        border: 1px solid #ccc;
+                                        background: white;
+                                        width: 8rem;
+                                        position: absolute;
+                                        inset: auto 11.5rem -18.5rem;
+                                        font-size: 1.4rem;
+                                        border-radius: 4px;
+                                        z-index: 10;
+                                        .list__para {
+                                            padding: 5px 0;
+                                            display: flex;
+                                            justify-content: center;
+                                        }
+                                        .list__para:hover {
+                                            background: #007BFF;
+                                            color: white;
+                                        }
+                                    }
+                                    .active--max {
+                                        display: block;
+                                    }
+                                }
+                            }
+                            p {
+                                font-size: 14px;
+                                line-height: 17px;
+                            }
+                            .check {
+                                display: flex;
+                                align-items: center;
+                                gap: 1rem;
+                                @include iphone {
+                                    margin-top: -1.5rem;
+                                }
+                                input {
+                                    width: 2rem;
+                                    height: 2rem;
+                                }
+                                label {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                    .network {
+                        display: grid;
+                        grid-template-columns: 33% 33% 33%;
+                        justify-content: space-between;
+                        margin: 16px 0px 26px 0px;
+                        @include iphone {
+                            display: flex;
+                            flex-direction: column;
+                            margin: 16px 0px 0px 0px;
+                        }
+                        .network__detail {
+                            h3 {
+                                font-size: 16px;
+                                line-height: 20px;
+                            }
+                            .network__item {
+                                background: #F7FAFC;
+                                border-radius: 6px;
+                                width: 17rem;
+                                margin: 12px 0px 26px 0px;
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 10px 15px;
+                                position: relative;
+                                .network__number {
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                }
+                                .network__para {
+                                    display: flex;
+                                    gap: 1rem;
+                                    align-items: center;
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                    cursor: pointer;
+                                    .list--capacity {
+                                        display: none;
+                                        position: absolute;
+                                        margin-top: 25rem;
+                                        margin-left: -1.5rem;
+                                        width: 7rem;
+                                        border: 1px solid #ccc;
+                                        padding: 1rem 0;
+                                        z-index: 10;
+                                        background: white;
+                                        border-radius: 5px;
+                                        cursor: pointer;
+                                        .list__para {
+                                            font-size: 16px;
+                                            line-height: 20px;
+                                            color: #212529;
+                                            padding: 5px 15px;
+                                        }
+                                        .list__para:hover {
+                                            background: #007BFF;
+                                            color: white;
+                                        }
+                                    }
+                                    .active {
+                                        display: block;
+                                    }
+                                    .list--grow {
+                                        display: none;
+                                        position: absolute;
+                                        margin-top: 19rem;
+                                        margin-left: -1.5rem;
+                                        width: 9.5rem;
+                                        border: 1px solid #ccc;
+                                        padding: 1rem 0;
+                                        z-index: 10;
+                                        background: white;
+                                        border-radius: 5px;
+                                        cursor: pointer;
+                                        .list__para {
+                                            font-size: 16px;
+                                            line-height: 20px;
+                                            color: #212529;
+                                            padding: 5px 15px;
+                                        }
+                                        .list__para:hover {
+                                            background: #007BFF;
+                                            color: white;
+                                        }
+                                    }
+                                    .active_grow {
+                                        display: block;
+                                    }
+                                    .list--stabilized {
+                                        display: none;
+                                        position: absolute;
+                                        margin-top: 25rem;
+                                        margin-left: -3.5rem;
+                                        width: 9.5rem;
+                                        border: 1px solid #ccc;
+                                        padding: 1rem 0;
+                                        z-index: 10;
+                                        background: white;
+                                        border-radius: 5px;
+                                        cursor: pointer;
+                                        .list__para {
+                                            font-size: 16px;
+                                            line-height: 20px;
+                                            color: #212529;
+                                            padding: 5px 0px;
+                                            display: flex;
+                                            justify-content: center;
+                                        }
+                                        .list__para:hover {
+                                            background: #007BFF;
+                                            color: white;
+                                        }
+                                    }
+                                    .active--stab {
+                                        display: block;
+                                    }
+                                }
+                            }
+                            p {
+                                font-size: 14px;
+                                line-height: 17px;
+                            }
+                            .check {
+                                display: flex;
+                                align-items: center;
+                                gap: 1rem;
+                                // margin-top: 2rem;
+                                input {
+                                    width: 2rem;
+                                    height: 2rem;
+                                }
+                                label {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                        .check {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            margin-top: 2rem;
+                            @include iphone {
+                                margin: -15px 0px 5px 0px;
+                            }
+                            input {
+                                height: 3rem;
+                                width: 2rem;
+                            }
+                            label {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    p {
+                        width: 90%;
+                    }
+                    .estimate__earning {
+                        display: flex;
+                        gap: 2rem;
+                        @include iphone {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .coin {
+                            width: 20%;
+                            @include iphone {
+                                width: 100%;
+                            }
+                            p {
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 20px;
+                                @include iphone {
+                                    margin-bottom: 1rem;
+                                }
+                            }
+                            h2 {
+                                font-size: 24px;
+                            }
+                        }
+                    }
+                    .Exchange__Rate {
+                        margin-top: 24px;
+                        font-family: Encode Sans;
+                        font-style: normal;
+                        h2 {
+                            font-size: 24px;
+                            line-height: 30px;
+                            font-weight: bold;
+                        }
+                        .rate__detail {
+                            border: 1px solid #DDDDDD;
+                            box-sizing: border-box;
+                            border-radius: 6px;
+                            padding: 15px 13px;
+                            margin: 18px 0px;
+                            .num_money {
+                                display: flex;
+                                gap: 10px;
+                                align-items: center;
+                                @include iphone {
+                                    display: grid;
+                                    grid-template-columns: 40% 60%;
+                                }
+                                .enter_num {
+                                    @include iphone {
+                                        background: #F7FAFC;
+                                        border-radius: 6px;
+                                    }
+                                    .dollar {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 10px;
+                                        border: 1px solid #ccc;
+                                        padding: 10px 10px;
+                                        border-radius: 6px;
+                                        input {
+                                            border: none;
+                                            outline: none;
+                                            @include iphone {
+                                                width: 50%;
+                                                background: #F7FAFC;
+                                            }
+                                        }
+                                    }
+                                }
+                                .m {
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                    color: #212529;
+                                }
+                            }
+                            .desc_money {
+                                font-weight: normal;
+                                font-size: 14px;
+                                line-height: 17px;
+                                margin-top: 10px;
+                                a {
+                                    text-decoration: none;
+                                    color: #3AAC59;
+                                }
+                            }
+                        }
+                    }
+                }
+                .simp__result {
+                    font-family: Encode Sans;
+                    font-style: normal;
+                    display: none;
+                    .network {
+                        h2 {
+                            font-size: 24px;
+                            line-height: 30px;
+                        }
+                        .network__detail {
+                            display: flex;
+                            justify-content: space-between;
+                            border: 1px solid #DDDDDD;
+                            box-sizing: border-box;
+                            border-radius: 6px;
+                            padding: 9px 13px;
+                            margin: 16px 0px 0px 0px;
+                            @include iphone {
+                                flex-direction: column;
+                                gap: 2rem;
+                            }
+                            .network__total {
+                                font-weight: normal;
+                                font-size: 16px;
+                                line-height: 20px;
+                                color: #212529;
+                                .para {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 1rem;
+                                    .numb {
+                                        font-weight: 500;
+                                        font-size: 24px;
+                                        line-height: 30px;
+                                        color: #212529;
+                                    }
+                                    .capacity {
+                                        font-weight: 500;
+                                        font-size: 24px;
+                                        line-height: 30px;
+                                        color: #212529;
+                                    }
+                                }
+                                .alert {
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                    color: #6C757D;
+                                }
+                            }
+                            .network__owned {
+                                h3 {
+                                    font-weight: normal;
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                    color: #212529;
+                                }
+                                .para {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 1rem;
+                                    .numb {
+                                        font-weight: 500;
+                                        font-size: 24px;
+                                        line-height: 30px;
+                                        color: #212529;
+                                    }
+                                }
+                                .alert {
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                    color: #6C757D;
+                                }
+                            }
+                            .Expected__time {
+                                @extend .network__owned;
+                            }
+                        }
+                    }
+                    .earning {
+                        font-family: Encode Sans;
+                        font-style: normal;
+                        font-weight: normal;
+                        margin-top: 24px;
+                        h2 {
+                            font-size: 24px;
+                            line-height: 30px;
+                            font-weight: bold;
+                        }
+                        p {
+                            font-size: 14px;
+                            line-height: 17px;
+                            color: #212529;
+                            margin: 16px 0px 0px 0px;
+                        }
+                        .earning__detail {
+                            font-family: Encode Sans;
+                            font-style: normal;
+                            font-weight: normal;
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            gap: 3rem 0rem;
+                            justify-content: space-between;
+                            border: 1px solid #DDDDDD;
+                            box-sizing: border-box;
+                            border-radius: 6px;
+                            padding: 9px 13px;
+                            margin: 16px 0px 0px 0px;
+                            @include iphone {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 2rem;
+                            }
+                            .hourly {
+                                font-size: 16px;
+                                line-height: 20px;
+                                color: #212529;
+                                h3 {
+                                    font-weight: normal;
+                                }
+                                .para {
+                                    .numb {
+                                        font-weight: 500;
+                                        font-size: 24px;
+                                        line-height: 30px;
+                                    }
+                                }
+                            }
+                            .daily,
+                            .monthly {
+                                @extend .hourly;
+                            }
+                        }
+                    }
+                    .Exchange__Rate {
+                        margin-top: 24px;
+                        font-family: Encode Sans;
+                        font-style: normal;
+                        h2 {
+                            font-size: 24px;
+                            line-height: 30px;
+                            font-weight: bold;
+                        }
+                        .rate__detail {
+                            border: 1px solid #DDDDDD;
+                            box-sizing: border-box;
+                            border-radius: 6px;
+                            padding: 15px 13px;
+                            margin: 18px 0px;
+                            .num_money {
+                                display: flex;
+                                gap: 10px;
+                                align-items: center;
+                                .enter_num {
+                                    .dollar {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 10px;
+                                        border: 1px solid #ccc;
+                                        padding: 10px 10px;
+                                        border-radius: 6px;
+                                        input {
+                                            border: none;
+                                            outline: none;
+                                        }
+                                    }
+                                }
+                                .m {
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                    color: #212529;
+                                }
+                            }
+                            .desc_money {
+                                font-weight: normal;
+                                font-size: 14px;
+                                line-height: 17px;
+                                margin-top: 10px;
+                                a {
+                                    text-decoration: none;
+                                    color: #3AAC59;
+                                }
+                            }
+                        }
+                    }
+                }
+                .sim {
+                    display: block;
+                }
+                .adv {
+                    display: block;
+                }
+            }
+            .Estimated_Cost {
+                font-family: Encode Sans;
+                font-style: normal;
+                font-weight: normal;
+                .esti_tit {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    @include iphone {
+                        gap: 0;
+                    }
+                    h2 {
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 30px;
+                        @include iphone {
+                            font-size: 18px;
+                            line-height: 22px;
+                        }
+                    }
+                    span {
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #212529;
+                        @include iphone {
+                            letter-spacing: -0.01em;
+                            font-size: 13px;
+                        }
+                    }
+                }
+                .op__mode {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #276749;
+                    margin-top: 16px;
+                    .active {
+                        background: #C6F6D5;
+                        border-radius: 9999px;
+                        padding: 10px 15px;
+                        @include iphone {
+                            padding: 5px 10px;
+                        }
+                    }
+                    .Recommended,
+                    .Custom {
+                        cursor: pointer;
+                    }
+                }
+                .custom__cost {
+                    display: none;
+                }
+                .op__cost {
+                    display: none;
+                    .list__cost {
+                        border: 1px solid #ccc;
+                        padding: 10px 13px;
+                        border-radius: 6px;
+                        margin-top: 12px;
+                        .cost__item {
+                            p {
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 17px;
+                                color: #212529;
+                            }
+                            h2 {
+                                font-weight: 600;
+                                font-size: 24px;
+                                line-height: 30px;
+                                margin: 7px 0px 2px 0px;
+                            }
+                            .price__cost {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+                                margin: 7px 0px;
+                                h3 {
+                                    font-weight: 500;
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                }
+                                span {
+                                    font-size: 12px;
+                                    line-height: 15px;
+                                    color: #6C757D;
+                                }
+                            }
+                            .desc_cost {
+                                font-size: 14px;
+                                line-height: 17px;
+                                margin: 7px 0px;
+                            }
+                            .device1 {
+                                padding: 0px;
+                                .link {
+                                    text-decoration: none;
+                                    color: #3AAC59;
+                                    padding: 0px !important;
+                                    font-weight: 500;
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                }
+                            }
+                            .device {
+                                padding-left: 15px;
+                                @include iphone {
+                                    padding-left: 0px;
+                                }
+                                .device_item {
+                                    @include iphone {
+                                        margin: 1rem 0;
+                                    }
+                                    span {
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                        color: #212529;
+                                    }
+                                    a {
+                                        text-decoration: none;
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                        color: #3AAC59;
+                                        padding: 0px 10px;
+                                        @include iphone {
+                                            padding-left: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .recCost {
+                    display: block;
+                }
+                .cusCost {
+                    display: block;
+                    font-family: Encode Sans;
+                    font-style: normal;
+                    .list--cost {
+                        border: 1px solid #DDDDDD;
+                        box-sizing: border-box;
+                        border-radius: 6px;
+                        padding: 15px 13px;
+                        margin: 18px 0px;
+                        .cost--item {
+                            @extend .cost__item;
+                            p {
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 17px;
+                            }
+                            h2 {
+                                font-weight: 600;
+                                font-size: 24px;
+                                line-height: 30px;
+                                margin: 7px 0px 5px 0px;
+                                @include iphone {
+                                    margin: 10px 0px 5px 0px;
+                                }
+                            }
+                            .custom1 {
+                                display: grid;
+                                grid-template-columns: 40% 60%;
+                                align-items: center;
+                                border: 1px solid #ccc;
+                                margin: 15px 0px;
+                                border-radius: 6px;
+                                width: 200px;
+                                padding: 5px 15px;
+                                height: 25px;
+                                background: #F7FAFC;
+                                input {
+                                    border: none;
+                                    outline: none;
+                                    background: #F7FAFC;
+                                }
+                                label {
+                                    font-weight: 500;
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                }
+                            }
+                            .desc_cost {
+                                font-size: 14px;
+                                line-height: 17px;
+                            }
+                            .device {
+                                .device_item {
+                                    margin: 1rem 0;
+                                    span {
+                                        font-size: 14px;
+                                        line-height: 17px
+                                    }
+                                    a {
+                                        text-decoration: none;
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                        color: #3AAC59;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .Alternative_Options {
+                margin-top: 16px;
+                font-family: Encode Sans;
+                font-style: normal;
+                font-weight: normal;
+                .heading {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    h2 {
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 30px;
+                        @include iphone {
+                            font-size: 18px;
+                            line: height 22px;
+                        }
+                    }
+                    span {
+                        font-size: 14px;
+                        line-height: 17px;
+                        font-weight: normal;
+                        background: #F7FAFC;
+                        border-radius: 6px;
+                        padding: 5px 10px;
+                    }
+                }
+                .option__mode {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 17px;
+                    text-align: center;
+                    color: #276749;
+                    margin: 16px 0px 12px 0px;
+                    .buy_plot,
+                    .buy_chia {
+                        cursor: pointer;
+                    }
+                    .active {
+                        background: #C6F6D5;
+                        border-radius: 9999px;
+                        padding: 10px 15px;
+                        @include iphone {
+                            padding: 5px 10px;
+                        }
+                    }
+                }
+                .buy__chia,
+                .buy__plot {
+                    display: none;
+                }
+                .buy__chia {
+                    .cont_chia {
+                        border: 1px solid #ccc;
+                        padding: 55px 24px 55px 13px;
+                        width: 500px;
+                        border-radius: 6px;
+                        font-size: 16px;
+                        line-height: 20px;
+                        text-align: center;
+                        @include iphone {
+                            width: 88%;
+                        }
+                    }
+                    .trans {
+                        background: #C6F6D5;
+                        border-radius: 6px;
+                        padding: 13px;
+                        margin: 16px 0px;
+                        p {
+                            font-size: 16px;
+                            line-height: 20px;
+                            margin-bottom: 10px;
+                        }
+                        h3 {
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 20px;
+                            color: #212529;
+                        }
+                    }
+                }
+                .plots,
+                .chia {
+                    display: block;
+                }
+                .buy__plot {
+                    .content {
+                        border: 1px solid #ccc;
+                        padding: 10px 13px;
+                        width: 63%;
+                        border: 1px solid #DDDDDD;
+                        box-sizing: border-box;
+                        border-radius: 6px;
+                        @include iphone {
+                            width: 100%;
+                        }
+                        .desc {
+                            font-size: 16px;
+                            line-height: 20px;
+                            color: #212529;
+                            a {
+                                text-decoration: none;
+                                color: #3AAC59;
+                            }
+                        }
+                        .buy {
+                            background: #38A169;
+                            border-radius: 6px;
+                            font-weight: 600;
+                            font-size: 14px;
+                            line-height: 17px;
+                            text-align: center;
+                            color: #FFFFFF;
+                            padding: 7px 12px;
+                            margin-top: 10px;
+                            width: 89px;
+                            @include iphone {
+                                width: 20%;
+                            }
+                        }
+                    }
+                    .trans {
+                        background: #C6F6D5;
+                        border-radius: 6px;
+                        padding: 13px;
+                        margin: 16px 0px;
+                        p {
+                            font-size: 16px;
+                            line-height: 20px;
+                            margin-bottom: 10px;
+                        }
+                        h3 {
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 20px;
+                            color: #212529;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+header {
+    width: 100%;
+    z-index: 100;
+    background: url("../assets/img/bg_calc.png");
+    height: 168px;
+    display: flex;
+    z-index: 100;
+    align-items: center;
+    @include iphone {
+        top: 0px;
+        height: 100%;
+    }
+    .container {
+        @include iphone {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 65% 25% 10%;
+            align-items: center;
+            padding: 1.4rem 0;
+        }
+        width: 55%;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        top: 40px;
+        background-color: rgba(255,
+        255,
+        255,
+        0.1);
+        margin: 0 auto;
+        padding: 27px 0;
+        align-items: center;
+        .logo {
+            img {
+                @include iphone {
+                    padding-left: 15px;
+                    width: 135px;
+                }
+                width: 100%;
+                padding-left: 27px;
+            }
+        }
+        .menu {
+            @include iphone {
+                display: none;
+            }
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            width: 82%;
+            .guid {
+                font-size: 16px;
+                line-height: 20px;
+                display: flex;
+                color: #F8F9FA;
+                align-items: center;
+                padding: 10px 15px;
+                h3 {
+                    margin-right: 8px;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+                .nav {
+                    position: absolute;
+                    top: 10.5rem;
+                    width: 214px;
+                    margin-left: -15px;
+                    height: 176px;
+                    background: linear-gradient(180deg, #047A69 0%, #247C50 50%, #5A7E26 100%);
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 7px;
+                    display: none;
+                    &__menu {
+                        padding: 20px 15px;
+                        display: grid;
+                        gap: 12px;
+                        a {
+                            text-decoration: none;
+                            font-size: 16px;
+                            line-height: 20px;
+                            color: #D8D8D8;
+                        }
+                    }
+                }
+            }
+            .guid:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                transition: 0.4s;
+                .nav {
+                    display: block;
+                }
+            }
+            h2 {
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+            .chart,
+            h2,
+            .cal {
+                @extend .guid;
+            }
+        }
+        .btn-login {
+            @include iphone {
+                width: 120px;
+                height: 26px;
+            }
+            background: #12A334;
+            box-shadow: 0px 7.5px 35px rgba(7,
+            9,
+            25,
+            0.03);
+            border-radius: 4.64px;
+            height: 40px;
+            width: 164px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            color: #F8F9FA;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-self: end;
+            margin-right: 25px;
+        }
+        .navmobile {
+            display: none;
+            @include iphone {
+                display: block;
+            }
+        }
+        .navMenu {
+            @include iphone {
+                z-index: 10;
+                background: #F7FAFC;
+                border: 1px solid #DEE2E6;
+                box-sizing: border-box;
+                border-radius: 10px;
+                right: 4rem;
+                width: 80%;
+            }
+            display: none;
+            background: #FFFFFF;
+            border-radius: 10px;
+            gap: 1rem;
+            flex-direction: column;
+            padding: 10px 15px 20px 15px;
+            position: absolute;
+            right: 4rem;
+            top: 7.5rem;
+            width: 70%;
+            font-family: Encode Sans;
+            font-style: normal;
+            font-weight: normal;
+            .btn__close {
+                position: relative;
+                .close {
+                    position: absolute;
+                    right: -2.5rem;
+                    top: -2.2rem;
+                }
+            }
+            h2 {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 20px;
+            }
+            .search {
+                display: flex;
+                justify-content: space-between;
+                text-decoration: none;
+                font-size: 16px;
+                line-height: 20px;
+                color: #000000;
+                align-items: center;
+                padding-right: 38px;
+                margin: 10px 0px;
+            }
+            .guides {
+                background: linear-gradient(180deg, #037A6A 0%, #267B4E 49.89%, #567E28 100%);
+                border-radius: 10px;
+                padding: 15px;
+                color: white;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 20px;
+                .guides__sub {
+                    .guides__item {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 15px 0px;
+                        text-decoration: none;
+                        color: white;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #F8F9FA;
+                        font-weight: normal;
+                    }
+                }
+            }
+            .Chart {
+                background: linear-gradient(180deg, #037A6A 0%, #267B4E 49.89%, #567E28 100%);
+                border-radius: 10px;
+                padding: 15px;
+                color: white;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 20px;
+                .chart__sub {
+                    .chart__item {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 15px 0px;
+                        text-decoration: none;
+                        color: white;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #F8F9FA;
+                    }
+                }
+            }
+        }
+        .menu--active {
+            display: flex;
+        }
+    }
+}
+
+.footer {
+    background: #F7FAFC;
+    border-radius: 0px;
+    font-family: Encode Sans;
+    font-style: normal;
+    font-weight: normal;
+    @include iphone {
+        display: none;
+    }
+    .ft_detail {
+        width: 43%;
+        margin: 0 auto;
+        padding: 32px 0px 54px 0px;
+        .info {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            padding: 32px 0px 17px 0px;
+            .ref {
+                h3 {
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #202020;
+                    margin-bottom: 7px;
+                }
+                .list__ref {
+                    padding-left: 15px;
+                    a {
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #3AAC59;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .contact {
+                @extend .ref;
+                .list__contact {
+                    padding: 0px;
+                    span {
+                        font-size: 14px;
+                        line-height: 21px;
+                    }
+                    @extend .list__ref;
+                }
+            }
+        }
+        .ref_desc {
+            p:first-child {
+                font-size: 14px;
+                line-height: 17px;
+                color: #202020;
+                padding-bottom: 15px;
+                width: 80%;
+            }
+            p:nth-child(2) {
+                font-size: 12px;
+            }
+        }
+    }
+}

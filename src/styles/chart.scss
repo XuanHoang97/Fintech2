@@ -1,0 +1,220 @@
+@import './variables';
+.chart {
+    &_header {
+        @include iphone {
+            justify-content: center;
+            padding: 25px 0;
+            text-align: center;
+            height: 100%;
+        }
+        padding: 0 48px;
+        background: rgba(255, 255, 255, 0.8);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        height: 146px;
+        .chart_icon {
+            @include iphone {
+                display: none;
+            }
+            width: 70px;
+            height: 70px;
+            box-shadow: 0px 100px 80px rgba(177, 177, 177, 0.07),
+            0px 41.7776px 33.4221px rgba(177, 177, 177, 0.0503198),
+            0px 22.3363px 17.869px rgba(177, 177, 177, 0.0417275),
+            0px 12.5216px 10.0172px rgba(177, 177, 177, 0.035),
+            0px 6.6501px 5.32008px rgba(177, 177, 177, 0.0282725),
+            0px 2.76726px 2.21381px rgba(177, 177, 177, 0.0196802);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 23px;
+        }
+        .chart_title {
+            width: 60%;
+            @include iphone {
+                width: 95%;
+            }
+            .title {
+                @include h2headline;
+                color: #212529;
+                margin-bottom: 11px;
+            }
+            .subtitle {
+                @include body2;
+                color: rgba(59, 62, 102, 0.65);
+                @include iphone {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    &_setting {
+        @include iphone {
+            display: none;
+        }
+        background: #FFFFFF;
+        border: 1px solid rgba(122, 123, 151, 0.3);
+        box-sizing: border-box;
+        box-shadow: 0px 7.5px 35px rgba(59, 62, 102, 0.03);
+        border-radius: 12px;
+        margin: 0 30px;
+        .title {
+            @include heebo;
+            font-size: 1.8rem;
+            color: #212529;
+            padding: 17px 30px;
+            border-bottom: 1px solid rgba(122, 123, 151, 0.3);
+        }
+        .setting {
+            padding: 21px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+            .form-group {
+                position: relative;
+                .label {
+                    @include heebo;
+                    font-size: 1rem;
+                    color: rgba(0, 0, 0, 0.54);
+                    position: absolute;
+                    top: 15%;
+                    left: 1.3%;
+                }
+                .setting_input {
+                    @include body1;
+                    width: 98%;
+                    border: 1px solid rgba(0, 0, 0, 0.23);
+                    border-radius: 3.2px;
+                    padding: 17px 10px 8px 10px;
+                    &:focus {
+                        border-color: #12A334;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+    .chart_render {
+        .arrow_box {
+            position: relative;
+            background: #555;
+            border: 2px solid #000000;
+        }
+        .arrow_box:after,
+        .arrow_box:before {
+            right: 100%;
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+        .arrow_box:after {
+            border-color: rgba(85, 85, 85, 0);
+            border-right-color: #555;
+            border-width: 10px;
+            margin-top: -10px;
+        }
+        .arrow_box:before {
+            border-color: rgba(0, 0, 0, 0);
+            border-right-color: #000000;
+            border-width: 13px;
+            margin-top: -13px;
+        }
+        .apexcharts-tooltip {
+            color: #fff;
+            transform: translateX(10px) translateY(10px);
+            overflow: visible !important;
+            white-space: normal !important;
+        }
+        .apexcharts-tooltip span {
+            padding: 5px 10px;
+            display: inline-block;
+        }
+        margin: 30px;
+        background: #F8F9FA;
+        height: 620px;
+        @include pc {
+            height: 500px;
+        }
+        @include iphone {
+            width: 95%;
+            margin: auto;
+            margin-top: 30px;
+            height: 450px;
+        }
+    }
+    .stepline-chart_render {
+        @extend .chart_render;
+        height: 550px;
+        @include pc {
+            height: 430px
+        }
+        @include iphone {
+            height: 450px;
+        }
+    }
+    .tib-chart_render {
+        @extend .chart_render;
+        height: 465px;
+        @include pc {
+            height: 300px;
+        }
+        @include iphone {
+            height: 450px;
+        }
+    }
+    .pie-chart_render {
+        @include iphone {
+            background: #F4F5FD;
+        }
+        @extend .chart_render;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .setting_time,
+    .setting_time-mobile {
+        @include iphone {
+            display: none;
+        }
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+        @include iphone {
+            margin-left: 0;
+            justify-content: center;
+        }
+        .time {
+            @include iphone {
+                padding: 5px 13px;
+            }
+            @include body2;
+            padding: 5px 15px;
+            background: #12A334;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            margin-right: 17px;
+            cursor: pointer;
+        }
+        .time:last-child {
+            margin-right: 0;
+        }
+        .active {
+            background: #F76D0A;
+        }
+    }
+    .setting_time-mobile {
+        display: none;
+        @include iphone {
+            display: flex;
+            margin-top: 32px;
+        }
+    }
+}

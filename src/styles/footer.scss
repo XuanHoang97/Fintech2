@@ -1,0 +1,93 @@
+@import "./variables.scss";
+footer {
+    @include iphone {
+        width: 100%;
+        background: #F0F2F5;
+        padding: 30px 0px 38px 0px;
+    }
+    width: 1052px;
+    margin: 0 auto;
+    @include encodesans;
+    .contents {
+        @include iphone {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 90%;
+            margin: auto;
+            gap: 3rem;
+        }
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        &>* {
+            h3 {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                color: #212529;
+                margin-bottom: 29px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 20px;
+                color: rgba(0, 0, 0, 0.5);
+                margin-top: 14px;
+            }
+        }
+    }
+    .icon {
+        @include iphone {
+            width: 75%;
+            padding: 17.69px 0px;
+            margin: 24px auto;
+        }
+        width: 19%;
+        margin: 100px auto;
+        padding: 40px 0;
+        text-align: center;
+        border-top: 2px solid #7A7B97;
+        border-bottom: 1px solid #7A7B97;
+        text-align: center;
+        border-top: 2px solid #7A7B97;
+        border-bottom: 1px solid #7A7B97;
+        .fab {
+            font-size: 17px;
+        }
+        .right {
+            margin-right: 32px;
+        }
+    }
+    h4 {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.5);
+        margin-top: 24px;
+        @include iphone {
+            font-size: 10px;
+            line-height: 12px;
+            text-align: left;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, 0.5);
+            width: 90%;
+            margin: auto;
+        }
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.5);
+        margin-top: 28px;
+        margin-bottom: 75px;
+        @include iphone {
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: left;
+            width: 90%;
+            margin: auto;
+        }
+    }
+}

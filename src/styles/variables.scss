@@ -1,0 +1,95 @@
+    @mixin transform($transforms) {
+        -moz-transform: $transforms;
+        -o-transform: $transforms;
+        -ms-transform: $transforms;
+        -webkit-transform: $transforms;
+        transform: $transforms;
+    }
+    
+    ;
+    @mixin encodesans {
+        font-family: 'Encode Sans', sans-serif;
+    }
+    
+    @mixin heebo {
+        font-family: 'Heebo', sans-serif;
+    }
+    
+    @mixin ipad {
+        @media(max-width: 1024px) {
+            @content;
+        }
+    }
+    
+    @mixin ipad-mini {
+        @media(max-width: 768px) {
+            @content;
+        }
+    }
+    
+    @mixin pc {
+        @media(max-width: 1440px) {
+            @content;
+        }
+    }
+    
+    @mixin iphone-mini {
+        @media(max-width: 375px) {
+            @content;
+        }
+    }
+    
+    @mixin iphone {
+        @media(max-width: 425px) {
+            @content;
+        }
+    }
+    
+    @mixin inter {
+        font-family: 'Inter', sans-serif;
+    }
+    
+    @mixin h2headline {
+        @include encodesans;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+    }
+    
+    @mixin h4headeline {
+        @include encodesans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0em;
+    }
+    
+    @mixin h5headline {
+        @include encodesans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0em;
+    }
+    
+    @mixin body1 {
+        @include encodesans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+    }
+    
+    @mixin body2 {
+        @include encodesans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+    }

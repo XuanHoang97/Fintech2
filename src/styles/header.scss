@@ -1,0 +1,226 @@
+@import "../styles/variables.scss";
+header {
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    z-index: 100;
+    @include iphone {
+        top: 0px;
+    }
+    .container {
+        @include iphone {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 65% 25% 10%;
+            align-items: center;
+            padding: 1.4rem 0;
+        }
+        width: 1052px;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        top: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        margin: 0 auto;
+        padding: 27px 0;
+        align-items: center;
+        .logo {
+            img {
+                @include iphone {
+                    padding-left: 15px;
+                    width: 135px;
+                }
+                width: 100%;
+                padding-left: 27px;
+            }
+        }
+        .menu {
+            @include iphone {
+                display: none;
+            }
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            width: 82%;
+            .guid {
+                font-size: 16px;
+                line-height: 20px;
+                display: flex;
+                color: #F8F9FA;
+                align-items: center;
+                padding: 10px 15px;
+                h3 {
+                    margin-right: 8px;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+                .nav {
+                    position: absolute;
+                    top: 7rem;
+                    width: 214px;
+                    margin-left: -15px;
+                    height: 176px;
+                    background: linear-gradient(180deg, #047A69 0%, #247C50 50%, #5A7E26 100%);
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 7px;
+                    display: none;
+                    &__menu {
+                        padding: 20px 15px;
+                        display: grid;
+                        gap: 12px;
+                        a {
+                            text-decoration: none;
+                            font-size: 16px;
+                            line-height: 20px;
+                            color: #D8D8D8;
+                        }
+                    }
+                }
+            }
+            .guid:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                transition: 0.4s;
+                .nav {
+                    display: block;
+                }
+            }
+            h2 {
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+            .chart,
+            h2,
+            .cal {
+                @extend .guid;
+            }
+            .chart>a {
+                text-decoration: none;
+                color: #F8F9FA;
+                font-size: 16px;
+                line-height: 20px;
+                margin-right: 8px;
+            }
+        }
+        .btn-login {
+            @include iphone {
+                width: 120px;
+                height: 26px;
+            }
+            background: #12A334;
+            box-shadow: 0px 7.5px 35px rgba(7, 9, 25, 0.03);
+            border-radius: 4.64px;
+            height: 40px;
+            width: 164px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            color: #F8F9FA;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-self: end;
+            margin-right: 25px;
+        }
+        .navmobile {
+            display: none;
+            @include iphone {
+                display: block;
+            }
+        }
+        .navMenu {
+            @include iphone {
+                // display: flex;
+            }
+            display: none;
+            background: #FFFFFF;
+            border-radius: 10px;
+            gap: 1rem;
+            flex-direction: column;
+            padding: 10px 15px 20px 15px;
+            position: absolute;
+            right: 4rem;
+            top: 7.5rem;
+            width: 70%;
+            font-family: Encode Sans;
+            font-style: normal;
+            font-weight: normal;
+            .btn__close {
+                position: relative;
+                .close {
+                    position: absolute;
+                    right: -2.5rem;
+                    top: -2.2rem;
+                }
+            }
+            h2 {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 20px;
+            }
+            .search {
+                display: flex;
+                justify-content: space-between;
+                text-decoration: none;
+                font-size: 16px;
+                line-height: 20px;
+                color: #000000;
+                align-items: center;
+                padding-right: 38px;
+                margin: 10px 0px;
+            }
+            .guides {
+                background: linear-gradient(180deg, #037A6A 0%, #267B4E 49.89%, #567E28 100%);
+                border-radius: 10px;
+                padding: 15px;
+                color: white;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 20px;
+                .guides__sub {
+                    .guides__item {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 15px 0px;
+                        text-decoration: none;
+                        color: white;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #F8F9FA;
+                        font-weight: normal;
+                    }
+                }
+            }
+            .Chart {
+                background: linear-gradient(180deg, #037A6A 0%, #267B4E 49.89%, #567E28 100%);
+                border-radius: 10px;
+                padding: 15px;
+                color: white;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 20px;
+                .chart__sub {
+                    .chart__item {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 15px 0px;
+                        text-decoration: none;
+                        color: white;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #F8F9FA;
+                    }
+                }
+            }
+        }
+        .menu--active {
+            display: flex;
+        }
+    }
+}

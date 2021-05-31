@@ -1,0 +1,238 @@
+@import "./variables.scss";
+@import "./plotte.scss";
+.sharecoin {
+    background-image: url('/assets/img/ax.png'), url('/assets/img/coin1.png'), url('/assets/img/coin2.png');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: 100% 100.1%, 100% 100%, 100% 100%;
+    background-size: 100%, 100% 100%, 100% 100%;
+    width: 100%;
+    @include iphone {
+        background: url('/assets/img/tree.png'), url('/assets/img/farming_mb.png');
+        background-repeat: no-repeat, no-repeat;
+        background-position: 50% 6%, 100% 100%;
+        background-size: 80% 14%, 100% 100%;
+    }
+    @include encodesans;
+    .shareCon {
+        padding-top: 182px;
+        padding-bottom: 277px;
+        .share {
+            @include iphone {
+                width: 100%;
+                background: transparent;
+                box-shadow: none;
+                margin-top: 12rem;
+            }
+            width: 1052px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            box-shadow: 0px 2.88px 4.8px rgba(166,
+            166,
+            185,
+            0.5);
+            border-radius: 12px;
+            &__header {
+                @include iphone {
+                    width: 90%;
+                    margin: auto;
+                }
+                h1 {
+                    font-size: 40px;
+                    line-height: 48px;
+                    text-align: center;
+                    color: #070919;
+                    padding-top: 66px;
+                    @include iphone {
+                        color: white;
+                        text-align: left;
+                        font-size: 32px;
+                        line-height: 48px;
+                    }
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #3B3E66;
+                    margin-top: 30px;
+                    text-align: center;
+                    @include iphone {
+                        color: white;
+                    }
+                }
+            }
+            .temporary {
+                @include iphone {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0px;
+                }
+                display: flex;
+                margin-left: 108px;
+                margin-top: 93px;
+                img {
+                    align-self: flex-end;
+                    @include iphone {
+                        display: none;
+                    }
+                }
+                &__contents {
+                    @include iphone {
+                        width: 90%;
+                        margin: auto;
+                    }
+                    margin-left: 47px;
+                    h2 {
+                        font-size: 31px;
+                        line-height: 38px;
+                        color: #3B3E66;
+                        margin-bottom: 19px;
+                        @include iphone {
+                            color: white;
+                            font-size: 24px;
+                            line-height: 38px;
+                        }
+                    }
+                    p {
+                        font-size: 18px;
+                        line-height: 28px;
+                        color: #3B3E66;
+                        margin-top: 13px;
+                        width: 75%;
+                        @include iphone {
+                            width: 100%;
+                            margin: 0px;
+                            color: white;
+                            font-size: 16px;
+                            line-height: 28px;
+                        }
+                    }
+                }
+            }
+            .desc {
+                @include iphone {
+                    width: 90%;
+                    margin: 15px auto;
+                }
+                margin: 146px 0 0 108px;
+                h1 {
+                    font-size: 30px;
+                    line-height: 38px;
+                    color: #3B3E66;
+                    margin-bottom: 19px;
+                    @include iphone {
+                        color: white;
+                        font-size: 24px;
+                        line-height: 38px;
+                    }
+                }
+                p {
+                    @include iphone {
+                        width: 100%;
+                        color: white;
+                        font-size: 16px;
+                        line-height: 28px;
+                    }
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #3B3E66;
+                    margin-top: 14px;
+                    width: 81%;
+                }
+            }
+            .block {
+                @include iphone {
+                    width: 90%;
+                    margin: 15px auto;
+                    display: none
+                }
+                margin: 153px 0 0 108px;
+                padding-bottom: 133px;
+                h1 {
+                    font-size: 30px;
+                    line-height: 38px;
+                    color: #212529;
+                }
+                p {
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #212529;
+                    margin-top: 19px;
+                    margin-bottom: 15px;
+                }
+                ul {
+                    @include iphone {
+                        margin-left: 15px;
+                    }
+                    list-style: initial;
+                    margin-left: 55px;
+                    li {
+                        font-size: 18px;
+                        line-height: 28px;
+                        color: #212529;
+                        margin-top: 10px;
+                        width: 79%;
+                        @include iphone {
+                            width: 100%;
+                        }
+                        span {
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sharecoin_mb {
+    display: none;
+    @include iphone {
+        display: block;
+        .block {
+            @include iphone {
+                width: 90%;
+                margin: 15px auto;
+                padding-bottom: 0px;
+            }
+            margin: 153px 0 0 108px;
+            padding-bottom: 133px;
+            h1 {
+                font-size: 30px;
+                line-height: 38px;
+                color: #212529;
+                @include iphone {
+                    font-size: 24px;
+                }
+            }
+            p {
+                font-size: 18px;
+                line-height: 28px;
+                color: #212529;
+                margin-top: 19px;
+                margin-bottom: 15px;
+            }
+            ul {
+                @include iphone {
+                    margin-left: 15px;
+                }
+                list-style: initial;
+                margin-left: 55px;
+                li {
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #212529;
+                    margin-top: 10px;
+                    width: 79%;
+                    @include iphone {
+                        width: 100%;
+                        font-size: 16px;
+                    }
+                    span {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
